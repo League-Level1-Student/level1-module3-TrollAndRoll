@@ -1,3 +1,5 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -8,20 +10,28 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class nastySurprise 
+public class nastySurprise implements ActionListener 
 {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton B1 = new JButton();
+	JButton B2 = new JButton();
 	
 	public static void main(String[] args) 
+	{	
+		new nastySurprise().runner();
+	}
+	
+	void runner()
 	{
-		JFrame frame = new JFrame();
-		JPanel panel = new JPanel();
-		JButton B1 = new JButton();
-		JButton B2 = new JButton();
+		String url = "https://media.tenor.com/images/086c3e78cdf7db4c41313db469046823/tenor.gif";
 		
 		B1.setText("Trick");
 		B1.setSize(100, 100);
+		B1.addActionListener(this);
 		B2.setText("Treat");
 		B2.setSize(100, 100);
+		B2.addActionListener(this);
 		
 		panel.add(B1);
 		panel.add(B2);
@@ -30,9 +40,11 @@ public class nastySurprise
 		frame.setVisible(true);
 		frame.pack();
 		
+		
+		showPictureFromTheInternet(url);
 	}
 	
-	private void showPictureFromTheInternet(String imageUrl) 
+	private static void showPictureFromTheInternet(String imageUrl) 
 	{
 	    try {
 	         URL url = new URL(imageUrl);
@@ -47,6 +59,16 @@ public class nastySurprise
 	    {
 	         e.printStackTrace();
 	    }
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) 
+	{
+		// TODO Auto-generated method stub
+		if(arg0.getSource() = B1)
+		{
+			
+		}
 	}
 }
 /*
