@@ -10,22 +10,23 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class nastySurprise implements ActionListener 
+public class NastySurprise implements ActionListener 
 {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JButton B1 = new JButton();
 	JButton B2 = new JButton();
 	
+	String spoopy = "https://media.tenor.com/images/086c3e78cdf7db4c41313db469046823/tenor.gif";
+	String pupper = "http://www.astro.cornell.edu/~derg/style/85852-puppies-cute-funny-puppy.jpg";
+	
 	public static void main(String[] args) 
 	{	
-		new nastySurprise().runner();
+		new NastySurprise().runner();
 	}
 	
 	void runner()
-	{
-		String url = "https://media.tenor.com/images/086c3e78cdf7db4c41313db469046823/tenor.gif";
-		
+	{		
 		B1.setText("Trick");
 		B1.setSize(100, 100);
 		B1.addActionListener(this);
@@ -40,8 +41,6 @@ public class nastySurprise implements ActionListener
 		frame.setVisible(true);
 		frame.pack();
 		
-		
-		showPictureFromTheInternet(url);
 	}
 	
 	private static void showPictureFromTheInternet(String imageUrl) 
@@ -65,9 +64,13 @@ public class nastySurprise implements ActionListener
 	public void actionPerformed(ActionEvent arg0) 
 	{
 		// TODO Auto-generated method stub
-		if(arg0.getSource() = B1)
+		if(arg0.getSource() == B1)
 		{
-			
+			showPictureFromTheInternet(pupper);
+		}
+		else 
+		{
+			showPictureFromTheInternet(spoopy);
 		}
 	}
 }
