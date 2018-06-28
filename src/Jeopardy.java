@@ -29,7 +29,7 @@ public class Jeopardy implements ActionListener
 {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton, fourthButton, fifthButton, sixthButton;
 	
 	private JPanel quizPanel;
 	int score = 0;
@@ -71,8 +71,21 @@ public class Jeopardy implements ActionListener
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
+		thirdButton = createButton("$400");
+		fourthButton = createButton("$600");
+		fifthButton = createButton("$800");
+		sixthButton = createButton("$1000");
+		quizPanel.add(thirdButton);
+		quizPanel.add(fourthButton);
+		quizPanel.add(fifthButton);
+		quizPanel.add(sixthButton);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
+		fifthButton.addActionListener(this);
+		sixthButton.addActionListener(this);
 		
-				
+		
+		//playJeopardyTheme();
 		frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount+1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
@@ -82,7 +95,7 @@ public class Jeopardy implements ActionListener
 
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music 
-	 * 
+	 * k.
 	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 	 *
 	 * [optional] Use the showImage or playSound methods when the user answers a question 
@@ -112,17 +125,39 @@ public class Jeopardy implements ActionListener
 		if(buttonPressed == firstButton)
 		{
 			// Call the askQuestion() method
-			askQuestion();
+			askQuestion("Are you silious?\n(Yes or No)", "Yes", 100);
 			// Fill in the askQuestion() method. When you play the game, the score should change.
+			firstButton.setText(null);
 		}
 		// Or if the buttonPressed was the secondButton
-
-
+		else if(buttonPressed == secondButton)
+		{
 			// Call the askQuestion() method with a harder question
-			
+			askQuestion("Are seals cute????\n(Yes or No)", "Yes", 200);
 		
 		// Clear the button text (set the button text to nothing)
-		
+			secondButton.setText(null);
+		}
+		else if(buttonPressed == thirdButton)
+		{
+			askQuestion("Will you seal ur mouth?\n(Yes or No)", "No", 400);
+			thirdButton.setText(null);
+		}
+		else if(buttonPressed == fourthButton)
+		{
+			askQuestion("How old can seals get?\n(Number)", "30", 600);
+			fourthButton.setText(null);
+		}
+		else if(buttonPressed == fifthButton)
+		{
+			askQuestion("How many species of seals are there?\n(Number)", "33", 800);
+			fifthButton.setText(null);
+		}
+		else if(buttonPressed == sixthButton)
+		{
+			askQuestion("How long can a seal hold it's breath?\n(Hint: hours)", "2", 1000);
+			sixthButton.setText(null);
+		}
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) 
@@ -130,7 +165,7 @@ public class Jeopardy implements ActionListener
 		// Remove this temporary message
 		//JOptionPane.showMessageDialog(null, "this is where the question will be asked");
 		// Use a pop up to ask the user the question
-		String responce = JOptionPane.showInputDialog("Are you sealious???\n(Yes or No)");
+		String responce = JOptionPane.showInputDialog(question);
 		// If the answer is correct
 		if(responce.equalsIgnoreCase(correctAnswer))
 		{
