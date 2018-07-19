@@ -19,60 +19,70 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public class FortuneTeller extends JPanel implements Runnable, MouseListener {
+public class FortuneTeller extends JPanel implements Runnable, MouseListener 
+{
 
     JFrame frame = new JFrame();
 
-    int frameWidth = 500;
-    int frameHeight = 400;
+    int frameWidth = 250;
+    int frameHeight = 250;
 
-    FortuneTeller() throws Exception {
+    FortuneTeller() throws Exception 
+    {
    	 // 1. Choose an image for your fortune teller and put it in your default package
    	 fortuneTellerImage = ImageIO.read(getClass().getResource("fortune teller.png"));
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
+   	 //k.
    	 // 4. add a mouse listener to the frame
-
+   	 frame.addMouseListener(this);
+   	 
     }
 
-    static void begin() {
+    static void begin() 
+    {
    	 // 3. Welcome the user. Give them a hint for the secret location.
-
+    	JOptionPane.showMessageDialog(null, "Welcome stranger, your RIGHT on time...\n What you seek lies in the center of everything you can SEE.");
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e) 
+    {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-
+   	 System.out.println("(" + mouseX + ", " + mouseY + ")");
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 int secretLocationX = 153;
+   	 int secretLocationY = 96;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-
+   		 JOptionPane.showInputDialog("What do you wish to learn?");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+   		 //doneso.
+   		 AudioClip sound = JApplet.newAudioClip(getClass().getResource("spooky noise.wav"));
    		 // 10. Play the sound
-
+   		 sound.play();
    		 // 11. Use the pause() method below to wait until your music has finished
-
+   		 pause(3);
    		 // 12. Insert your completed Magic 8 ball recipe (http://bit.ly/Zdrf6d) here
-
+   		 //no. (jk I just can't find it so imma just leave this blank)
    	 }
 
     }
 
-    private boolean areClose(int mouseX, int secretLocationX) {
+    private boolean areClose(int mouseX, int secretLocationX) 
+    {
    	 return mouseX < secretLocationX + 15 && mouseX > secretLocationX - 15;
     }
 
-    private void pause(int seconds) {
+    private void pause(int seconds) 
+    {
    	 try {
    		 Thread.sleep(1000 * seconds);
-   	 } catch (InterruptedException e) {
+   	 } catch (InterruptedException e) 
+   	 {
    		 e.printStackTrace();
    	 }
     }
@@ -81,13 +91,15 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
     
     BufferedImage fortuneTellerImage;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception 
+    {
    	 SwingUtilities.invokeLater(new FortuneTeller());
    	 begin();
     }
 
     @Override
-    public void run() {
+    public void run() 
+    {
    	 frame.add(this);
    	 setPreferredSize(new Dimension(frameWidth, frameHeight));
    	 frame.pack();
@@ -96,17 +108,21 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 frame.setVisible(true);
     }
 
-private void showAnotherImage(String imageName) {
-   	 try {
+private void showAnotherImage(String imageName) 
+{
+   	 try 
+   	 {
    		 fortuneTellerImage = ImageIO.read(getClass().getResource(imageName));
-   	 } catch (Exception e) {
+   	 } catch (Exception e) 
+   	 {
    		 System.err.println("Couldn't find this image: " + imageName);
    	 }
    	 repaint();
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) 
+    {
    	 g.drawImage(fortuneTellerImage, 0, 0, null);
     }
 
@@ -125,7 +141,3 @@ private void showAnotherImage(String imageName) {
 }
 
 // Copyright The League, 2016
-
-
-
-
