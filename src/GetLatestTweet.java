@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 
 public class GetLatestTweet implements ActionListener 
 {
+	//thing
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JTextField box = new JTextField(10);
