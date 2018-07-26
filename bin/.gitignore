@@ -4,10 +4,13 @@
 /extra/
 /fortune teller.png
 /gridworld.jar
+/illusion.jpg
 /jeopardy.wav
 /left.jpg
 /moo.wav
+/opticalfeature.jpg
 /right.jpg
+/spooky noise.wav
 /up.jpg
 /BookOfIllusions.class
 /ChuckleClicker.class
@@ -19,7 +22,5 @@
 /NetflixQueue.class
 /SimonSays.class
 /TypingTutor.class
-/illusion.jpg
-/opticalfeature.jpg
-/170160__timgormly__8-bit-spooky.aiff
-/spooky noise.wav
+/calculator.class
+/Calculator.class
