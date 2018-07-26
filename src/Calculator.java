@@ -98,7 +98,7 @@ public class Calculator implements ActionListener
 	
 	void divide()
 	{
-		int answer = num1 / num2;
+		double answer = (double)num1 / num2;
 		ans.setText("" + answer);
 	}
 }
