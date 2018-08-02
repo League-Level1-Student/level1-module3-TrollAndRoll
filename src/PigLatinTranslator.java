@@ -55,7 +55,7 @@ public class PigLatinTranslator implements ActionListener
    private static String pigWord(String word) {
         int split = firstVowel(word);
         return word.substring(split)+"-"+word.substring(0, split)+"ay";
-   }Translator
+   }
 
    /**
    * Method to translate a sentence word by word.
