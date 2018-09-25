@@ -28,19 +28,25 @@ public class WhackAMole implements ActionListener
 
 	public void run() 
 	{
+		
+		frame = new JFrame();
 		frame.setVisible(true);
 		frame.setTitle("Whack a button for Fame and Glory");
 		frame.setSize(300, 300);
 		
 		while(moles < 10)
 		{
-			if(found = true)
+			if(found == true)
 			{
 				drawButtons(randy.nextInt(9));
-				found = false;
+				frame.add(panel);
+				found= false;
+			
 			}
 			
 		}
+		
+	
 		
 		//endGame(0, 10);
 	}
@@ -65,7 +71,7 @@ public class WhackAMole implements ActionListener
 				panel.add(butt);
 			}
 		}
-		frame.add(panel);
+		
 	}
 
 	@Override
@@ -75,13 +81,16 @@ public class WhackAMole implements ActionListener
 		JButton pressed = (JButton) arg0.getSource();
 		if(pressed.getText().equals("mole!"))
 		{
-			speak("You Missed!");
+			moles = moles + 1;
+			panel.removeAll();
+			found= true;
+			drawButtons(9);
+			
+			
 		}
 		else
 		{
-			moles = moles + 1;
-			frame.dispose();
-			found = true;
+			System.out.println("You Missed!");
 		}
 		
 	}
