@@ -1,4 +1,5 @@
 /Recipes.html
+/cow.wav
 /creepy-noise.wav
 /down.jpg
 /extra/
@@ -6,6 +7,11 @@
 /gridworld.jar
 /illusion.jpg
 /jeopardy.wav
+/left.jpg
+/moo.wav
+/opticalfeature.jpg
+/right.jpg
+/spooky noise.wav
 /BookOfIllusions.class
 /Calculator.class
 /ChuckleClicker.class
@@ -20,10 +26,8 @@
 /SimonSays.class
 /TypingTutor.class
 /WhackAMole.class
-/left.jpg
-/moo.wav
-/opticalfeature.jpg
-/right.jpg
-/spooky noise.wav
 /up.jpg
-/cow.wav
+/SlotMachine.class
+/cherry.png
+/orange.jpg
+/lime.png
