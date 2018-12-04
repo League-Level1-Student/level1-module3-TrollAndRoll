@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements ActionListener
@@ -85,31 +86,31 @@ public class SlotMachine implements ActionListener
 		}
 		if(reel2 == 1)
 		{
-			label1.setIcon(loadImage(orange));
+			label2.setIcon(loadImage(orange));
 		}
 		else if(reel2 == 2)
 		{
-			label1.setIcon(loadImage(cherry));
+			label2.setIcon(loadImage(cherry));
 		}
 		else if (reel2 == 3)
 		{
-			label1.setIcon(loadImage(lime));
+			label2.setIcon(loadImage(lime));
 		}
 		if(reel3 == 1)
 		{
-			label1.setIcon(loadImage(orange));
+			label3.setIcon(loadImage(orange));
 		}
 		else if(reel3 == 2)
 		{
-			label1.setIcon(loadImage(cherry));
+			label3.setIcon(loadImage(cherry));
 		}
 		else if (reel3 == 3)
 		{
-			label1.setIcon(loadImage(lime));
+			label3.setIcon(loadImage(lime));
 		}
 		if(reel1 == reel2 && reel1 == reel3)
 		{
-			
+			JOptionPane.showMessageDialog(null, "You Win!");
 		}
 	}
 }
